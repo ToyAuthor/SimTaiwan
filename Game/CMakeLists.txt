@@ -5,6 +5,8 @@ project(Game)
 
 if(MINGW)
 	add_definitions(-O2 -g -Wall -Wextra -Werror -std=c++11)
+elseif(UNIX)
+	add_definitions(-O2 -g -Wall -Wextra -Werror -std=c++11)
 endif()
 
 file(COPY ${PROJECT_SOURCE_DIR}/resource DESTINATION ${PROJECT_BINARY_DIR})
@@ -15,7 +17,7 @@ set(LIB
 	toy
 	toy_graph
 	toy_file
-	sfml-main
+	#sfml-main
 	sfml-system
 	sfml-window
 	freetype
